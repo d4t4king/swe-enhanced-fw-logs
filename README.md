@@ -1,8 +1,6 @@
-#[3.1] Enhanced Firewall Logs MOD V1.4.4
+#[3.1] Enhanced Firewall Logs MOD 
 * Author: KrisTof on smoothwall.org forums
 * Resurrected and maintained by dataking on smoothwall.org forums
-
-* Documentation version 1.4.4
 
 * Works on Smoothwall 3.1 ONLY !!
 
@@ -36,7 +34,7 @@ the padlock will be orange.
 
 ###3. How to install ?
 
-Transfer SW31\_Enhanced\_FW\_Logs-V1.4.4.tgz to /tmp on your smoothwall
+Transfer SW31\_Enhanced\_FW\_Logs-V1.4.x.tgz to /tmp on your smoothwall
 and run the commands:
 
 ```
@@ -49,7 +47,7 @@ $ ./install.sh
 
 Simply run the command:
 
-```$ /var/smoothwall/mods/enhanced-fw-logs/uninstall-enhanced-fw-logs-1.4.4.pl```
+```$ /var/smoothwall/mods/enhanced-fw-logs/uninstall-enhanced-fw-logs-1.4.x.pl```
 
 Go to your Smoothwall Firewall Logs page and enjoy!
 

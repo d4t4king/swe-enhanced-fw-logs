@@ -1238,7 +1238,7 @@ END
 	&alertbox('add','add');
 
 	&closebigbox();
-	print "<CENTER><FONT SIZE=1 COLOR=black>For questions or comments, please visit the \"</FONT><A HREF=\"http://community.smoothwall.org/forum/viewtopic.php?f=26&t=34526\" TARGET=_blank><FONT SIZE=1 COLOR=darkblue><U>[3.0] Enhanced Firewall Logs MOD</U></FONT></A><FONT SIZE=1 COLOR=black>\" Smoothwall Discussion Forum.</FONT></CENTER>";
+	print "<CENTER><FONT SIZE=1 COLOR=black>For questions or comments, please visit the \"</FONT><A HREF=\"https://community.smoothwall.org/forum/viewtopic.php?p=325640#p325640\" TARGET=_blank><FONT SIZE=1 COLOR=darkblue><U>[3.1] Enhanced Firewall Logs MOD</U></FONT></A><FONT SIZE=1 COLOR=black>\" Smoothwall Discussion Forum.</FONT></CENTER>";
 
 	&closepage();
 }
