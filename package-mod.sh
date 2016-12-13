@@ -15,6 +15,39 @@ echo -e "${YELLOW}This text is yellow (orange).${NC}"
 echo -e "${BGREEN}This text is bold green.${NC}"
 echo -e "${GREEN}This text is green.${NC}"
 
+echo -e "${GREEN}This script will install the Enhanced Firewall logs mod for you,"
+echo "from the  GitHub.com package or source.  You should use this script only"
+echo "if you downloaded this package from GitHub.com."
+echo
+echo "If you downloaded the package from the Smoothwall Express forums, or from"
+echo -e "smoothwall-info.net, ${BRED}DO NOT USE THIS SCRIPT${NC}."
+
+echo "Continue? [y,N]"
+read ans
+
+case $ans in 
+	y)
+		# continue
+		echo -e "${GREEN}Continuing on....${NC}"
+		;;
+	Y)
+		# continue
+		echo -e "${GREEN}Continuing on....${NC}"
+		;;
+	n)
+		echo "Quitting.  Bye!  :-)~"
+		exit 0
+		;;
+	N)
+		echo "Quitting.  Bye!  :-)~"
+		exit 0
+		;;
+	*)
+		echo -e "${BRED}Unrecognized response.  Exiting.${NC}"
+		exit 1
+		;;
+esac
+
 # put the var/ tree in /
 # put the tmp/ tree in /
 # copy the install scripts to /tmp/
