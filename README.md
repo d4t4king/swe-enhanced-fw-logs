@@ -5,7 +5,7 @@
 * Works on Smoothwall 3.1 ONLY !!
 
 ##Known issues:
-No more as far as I can tell...
+The GitHub release package _does not_ install as expected.  I am working on a script that will install from Github source or package.  Until that release you must use the package from the Smoothwall Express forums, or smoothwall-info.net
 
 ##Compatibility with other Mods:
 This mod was known to previously have issues with the Active IP Block mod.  I don't believe that mod was carried forward to 3.1, so there shouldln't be any conflicts.
