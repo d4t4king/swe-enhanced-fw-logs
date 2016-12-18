@@ -10,12 +10,12 @@ NC="\033[0m"
 
 MOD_NAME="enhanced-fw-logs"
 
-echo -e "${BRED}This text is bold red.${NC}"
-echo -e "${RED}This text is red.${NC}"
-echo -e "${BYELLOW}This text is bold yellow (orange).${NC}"
-echo -e "${YELLOW}This text is yellow (orange).${NC}"
-echo -e "${BGREEN}This text is bold green.${NC}"
-echo -e "${GREEN}This text is green.${NC}"
+#echo -e "${BRED}This text is bold red.${NC}"
+#echo -e "${RED}This text is red.${NC}"
+#echo -e "${BYELLOW}This text is bold yellow (orange).${NC}"
+#echo -e "${YELLOW}This text is yellow (orange).${NC}"
+#echo -e "${BGREEN}This text is bold green.${NC}"
+#echo -e "${GREEN}This text is green.${NC}"
 
 echo -e "${GREEN}This script will install the Enhanced Firewall logs mod for you,"
 echo "from the  GitHub.com package or source.  You should use this script only"
@@ -52,9 +52,9 @@ esac
 MODS_DIR="/var/smoothwall/mods"
 MODSA_DIR="/var/smoothwall/mods-available"
 INSTALL_DIR="${MODSA_DIR}/${MOD_NAME}"
-echo "Creating the mods storage directory..."
+echo -n "Creating the mods storage directory..."
 if [[ -e ${INSTALL_DIR} && -d ${INSTALL_DIR} ]]; then
-	echo -e "${BYELLOW}directory exists!${NC}"
+	echo -e "${YELLOW}directory exists!${NC}"
 else
 	mkdir -p $INSTALL_DIR
 	echo -e "${BGREEN}done.${NC}"
