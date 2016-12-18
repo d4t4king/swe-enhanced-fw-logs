@@ -8,6 +8,8 @@ YELLOW="\033[00;93m"
 BYELLOW="\033[01;93m"
 NC="\033[0m"
 
+MOD_NAME="enhanced-fw-logs"
+
 echo -e "${BRED}This text is bold red.${NC}"
 echo -e "${RED}This text is red.${NC}"
 echo -e "${BYELLOW}This text is bold yellow (orange).${NC}"
@@ -47,9 +49,17 @@ case $ans in
 		exit 1
 		;;
 esac
-
-# put the var/ tree in /var/smoothwall/mods/enhanced-fw-logs/
-mkdir -p /var/smoothwall/mods/enhanced-fw-logs
-chown -R nobody:nobody /var/smoothwall/mods/enhanced-fw-logs
-mv var/ /var/smoothwall/mods/enhanced-fw-logs/
+MODS_DIR="/var/smoothwall/mods"
+MODSA_DIR="/var/smoothwall/mods-available"
+INSTALL_DIR="${MODSA_DIR}/${MOD_NAME}"
+echo "Creating the mods storage directory..."
+if [[ -e ${INSTALL_DIR} && -d ${INSTALL_DIR} ]]; then
+	echo -e "${BYELLOW}directory exists!${NC}"
+else
+	mkdir -p $INSTALL_DIR
+	echo -e "${BGREEN}done.${NC}"
+fi
+cp -rvf etc/ httpd/ usr/ $INSTALL_DIR
+chown -R nobody:nobody $INSTALL_DIR
+ln -snf $INSTALL_DIR ${MODS_DIR}/${MOD_NAME}
 
