@@ -48,7 +48,11 @@ case $ans in
 		;;
 esac
 
-# put the var/ tree in /
+# put the var/ tree in /var/smoothwall/mods/enhanced-fw-logs/
+mkdir -p /var/smoothwall/mods/enhanced-fw-logs
+chown nobody:nobody /var/smoothwall/mods/enhanced-fw-logs
+mv var/ /var/smoothwall/mods/enhanced-fw-logs/
 # put the tmp/ tree in /
 # copy the install scripts to /tmp/
-# tarball it up
+mv tmp/* /tmp/
+
