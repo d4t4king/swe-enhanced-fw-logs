@@ -13,7 +13,7 @@
 # Parse the query string and determine how we are planning on operating (for GET requests)
 
 # This version of firewalllog.dat come from the
-# Enhanced Firewall Logs MOD V1.4.4
+# Enhanced Firewall Logs MOD V1.4.5
 
 if ($ENV{'QUERY_STRING'})
 {
@@ -24,8 +24,7 @@ if ($ENV{'QUERY_STRING'})
 	foreach $_ (@temp)
 	{
 		($var, $val) = split(/\=/);
-		if ($var eq 'ACTION') {
-			$action = $val; }
+		if ($var eq 'ACTION') { $action = $val; }
 	}
 
 	if ($action eq $tr{'add to ip block'})
@@ -157,17 +156,13 @@ $preferences{'USE_CIDR'} = '';
 
 &readhash("$preferences_file", \%preferences);
 
-if ($preferences{'VIEWSIZE'} ne '') { $viewsize2=$preferences{'VIEWSIZE'};
-} else
-{ $viewsize2=40;
-}
+if ($preferences{'VIEWSIZE'} ne '') { $viewsize2=$preferences{'VIEWSIZE'}; } 
+else { $viewsize2=40; }
 if ($preferences{'RED_COLOR'} ne '') {$Red_Color=$preferences{'RED_COLOR'};}
 if ($preferences{'GREEN_COLOR'} ne '') {$Green_Color=$preferences{'GREEN_COLOR'};}
 if ($preferences{'ORANGE_COLOR'} ne '') {$Orange_Color=$preferences{'ORANGE_COLOR'};}
-if ($preferences{'USE_CIDR'} ne '') {$Use_CIDR=$preferences{'USE_CIDR'};}
-else
-{ $Use_CIDR=1;
-}
+if ($preferences{'USE_CIDR'} ne '') {$Use_CIDR=$preferences{'USE_CIDR'}; }
+else { $Use_CIDR=1; }
 
  
 
@@ -255,8 +250,7 @@ while (<FILE>)
 {
 	s/#.*$//;
 	($name, $protoport) = /^([\w-]+)\W+(\d+\/\w+)/;
-	if (defined $protoport) {
-		$services{$protoport} = uc($name); }
+	if (defined $protoport) { $services{$protoport} = uc($name); }
 }
 close (FILE);
 
@@ -290,22 +284,11 @@ my $monthstr = $shortmonths[$cgiparams{'MONTH'}];
 my $day = $cgiparams{'DAY'};
 my $daystr;
 
-if (($cgiparams{'SHOW_BLOCKED'} eq '') || ($cgiparams{'SHOW_BLOCKED'} == 0))
-{
-	$showblocked=0;
-}
-else
-{
-	$showblocked=1;
-}
+if (($cgiparams{'SHOW_BLOCKED'} eq '') || ($cgiparams{'SHOW_BLOCKED'} == 0)) { $showblocked=0; }
+else { $showblocked=1; }
 
-if ($cgiparams{'INTERFACE'} eq '') {
-	$strdev = 'All';
-}
-else
-{
-	$strdev = $cgiparams{'INTERFACE'};
-}
+if ($cgiparams{'INTERFACE'} eq '') { $strdev = 'All'; }
+else { $strdev = $cgiparams{'INTERFACE'}; }
 
 if (($cgiparams{'SOURCEIP'} eq '') || ($cgiparams{'SOURCEIP'} eq 'All')) {
 	$filterip = 'All';
