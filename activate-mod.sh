@@ -52,14 +52,22 @@ esac
 MODS_DIR="/var/smoothwall/mods"
 MODSA_DIR="/var/smoothwall/mods-available"
 INSTALL_DIR="${MODSA_DIR}/${MOD_NAME}"
-echo -n "Creating the mods storage directory..."
-if [[ -e ${INSTALL_DIR} && -d ${INSTALL_DIR} ]]; then
-	echo -e "${YELLOW}directory exists!${NC}"
+CWD=$(pwd)
+if [ ${CWD} = ${INSTALL_DIR} ]; then
+	# the directory already esists (cuz we're in it)
+	# and the sub directories have already been copied
+	# either from git or tarball
 else
-	mkdir -p $INSTALL_DIR
-	echo -e "${BGREEN}done.${NC}"
+	echo -n "Creating the mods storage directory..."
+	if [[ -e ${INSTALL_DIR} && -d ${INSTALL_DIR} ]]; then
+		echo -e "${YELLOW}directory exists!${NC}"
+	else
+		mkdir -p $INSTALL_DIR
+		echo -e "${BGREEN}done.${NC}"
+	fi
+	cp -rvf etc/ httpd/ usr/ $INSTALL_DIR
 fi
-cp -rvf etc/ httpd/ usr/ $INSTALL_DIR
+cd /var/smoothwall/mods/
 chown -R nobody:nobody $INSTALL_DIR
 ln -snf $INSTALL_DIR ${MODS_DIR}/${MOD_NAME}
 
