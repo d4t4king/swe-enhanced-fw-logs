@@ -57,6 +57,10 @@ if [ ${CWD} = ${INSTALL_DIR} ]; then
 	# the directory already esists (cuz we're in it)
 	# and the sub directories have already been copied
 	# either from git or tarball
+	echo "It looks like we're in the mod directory."
+	echo "This means that either the git repo was cloned"
+	echo "here, or the tarball was extracted here."
+	echo "So, ew're pretty much ready to go."
 else
 	echo -n "Creating the mods storage directory..."
 	if [[ -e ${INSTALL_DIR} && -d ${INSTALL_DIR} ]]; then
