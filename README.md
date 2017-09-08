@@ -1,20 +1,20 @@
-#[3.1] Enhanced Firewall Logs MOD 
+# [3.1] Enhanced Firewall Logs MOD 
 * Author: KrisTof on smoothwall.org forums
 * Resurrected and maintained by dataking on smoothwall.org forums
 
 * Works on Smoothwall 3.1 ONLY !!
 
-##Known issues:
+## Known issues:
 The GitHub release package _does not_ install as expected.  I am working on a script that will install from Github source or package.  Until that release you must use the package from the Smoothwall Express forums, or smoothwall-info.net
 
-##Compatibility with other Mods:
+## Compatibility with other Mods:
 This mod was known to previously have issues with the Active IP Block mod.  I don't believe that mod was carried forward to 3.1, so there shouldln't be any conflicts.
 
-###1. What does this mod do?
+### 1. What does this mod do?
 
 This mod replaces /httpd/cgi-bin/logs.cgi/firewalllogs.dat and provides more advanced filtering.
 
-###2. What is this good for?
+### 2. What is this good for?
 
 In addition with the basic filtering by date, it allows for the
 filtering of logs based on the Incoming Interface (eth?) as well
@@ -32,7 +32,7 @@ If the IP was blocked manually or through Active Guardian, the padlock
 is red. If an IP was blocked automatically by the Active IP Block MOD, 
 the padlock will be orange.
 
-###3. How to install ?
+### 3. How to install ?
 
 Transfer SW31\_Enhanced\_FW\_Logs-V1.4.x.tgz to /tmp on your smoothwall
 and run the commands:
@@ -43,7 +43,7 @@ $ tar zxvf SW3_Enhanced_FW_Logs-V1.4.1tgz -C /
 $ ./install.sh
 ```
 
-###4. How to uninstall ?
+### 4. How to uninstall ?
 
 Simply run the command:
 
